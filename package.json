@@ -1,7 +1,8 @@
 {
-  "name": "js-stack-from-scratch",
+  "name": "js-stack-from-scratch-2017",
   "version": "1.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "yarn dev:start",
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --ignore src/client/app.jsx --exec babel-node src/server",
