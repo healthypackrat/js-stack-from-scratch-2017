@@ -8,16 +8,20 @@
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --ignore src/client/app.jsx --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
     "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
-    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
-    "prod:stop": "pm2 delete server",
+    "prod:start": "heroku local",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "yarn lint && flow && jest --coverage --passWithNoTests",
+    "heroku-postbuild": "yarn prod:build",
     "precommit": "yarn test",
     "prepush": "yarn test && yarn prod:build"
   },
   "browserslist": [
     "> 1%"
   ],
+  "engines": {
+    "node": "10.6.0",
+    "yarn": "1.7.0"
+  },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "4.0.0-alpha.6",
@@ -65,7 +69,6 @@
     "husky": "^0.14.3",
     "jest": "^23.3.0",
     "nodemon": "^1.17.5",
-    "pm2": "^3.0.0",
     "redux-mock-store": "^1.5.3",
     "rimraf": "^2.6.2",
     "webpack": "^4.15.1",
