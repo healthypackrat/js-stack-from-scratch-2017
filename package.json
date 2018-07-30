@@ -19,8 +19,8 @@
     "> 1%"
   ],
   "engines": {
-    "node": "10.6.0",
-    "yarn": "1.7.0"
+    "node": "10.x",
+    "yarn": "1.x"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
